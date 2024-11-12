@@ -7,7 +7,7 @@
   The tasks you need to do are below.
 
     TASKS TODO:
-      1. Calculate the score as the total of the number of correct answers
+      1. Calculate the score as the total of the number of correct answers 1/2
 
       2. Add an Event listener for the submit button, which will display the score and highlight 
          the correct answers when the button is clicked. Use the code from lines 67 to 86 to help you.
@@ -117,6 +117,9 @@ window.addEventListener('DOMContentLoaded', () => {
             timer = duration;
         }
     }, 1000);
+    //Display correct answer in red when timer is over with score -= use if statement to call function that wuill end quiz
+
+    
     }
 
   window.onload = function () {
@@ -125,7 +128,7 @@ window.addEventListener('DOMContentLoaded', () => {
     startTimer(oneMinute, display);
   };
 
-  //Display correct answer in red when timer is over with score
+  // function that will end quiz - will display score and show answers highlighted in
   
   
   
