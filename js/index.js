@@ -40,9 +40,20 @@ window.addEventListener('DOMContentLoaded', () => {
       a: 3,
     },
     {
-      q: 'What is the capital of Australia',
+      q: 'What is the capital of Australia?',
       o: ['Sydney', 'Canberra', 'Melbourne', 'Perth'],
       a: 1,
+    },
+    //Added 2 more questions to the app
+    {
+      q: 'Who is the most coolest person you know?',
+      o: ['Me', 'You', 'The person who added this question', 'The person reading this question'],
+      a: 2, //Self-love is important that's right, that's right
+    },
+    {
+      q: 'Do you know the muffin man?',
+      o: ['Yes', 'No', 'Maybe', 'The Muffin Man? '],
+      a: 4, 
     },
   ];
 
