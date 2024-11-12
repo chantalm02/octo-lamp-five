@@ -12,7 +12,7 @@
       2. Add an Event listener for the submit button, which will display the score and highlight 
          the correct answers when the button is clicked. Use the code from lines 67 to 86 to help you.
 
-      3. Add 2 more questions to the app (each question must have 4 options).
+      3. Add 2 more questions to the app (each question must have 4 options). (Done)
 
       4. Reload the page when the reset button is clicked (hint: search window.location)
 
@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', () => {
     {
       q: 'Do you know the muffin man?',
       o: ['Yes', 'No', 'Maybe', 'The Muffin Man? '],
-      a: 4, 
+      a: 3, 
     },
   ];
 
@@ -87,15 +87,44 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (quizItem.a == i) {
           //change background color of li element here
+          //liElement.style.backgroundColor = "red";
         }
 
-        if (radioElement.checked) {
+        if (radioElement.checked == quizItem.a) {
           // code for task 1 goes here
+          score += 1;
+          totalScore = document.getElementById("score");
+          totalScore.innerHTML = `${score}`;
+          console.log(score);
         }
       }
     });
   };
 
+  //function for countdown timer
+  function startTimer(duration, display) {
+    let timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+    }
+
+  window.onload = function () {
+    let oneMinute = 60 * 1,
+    display = document.querySelector('#time');
+    startTimer(oneMinute, display);
+  };
   // call the displayQuiz function
   displayQuiz();
+  calculateScore()
 });
