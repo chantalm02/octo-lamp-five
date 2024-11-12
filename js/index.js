@@ -14,7 +14,7 @@
 
       3. Add 2 more questions to the app (each question must have 4 options). (Done)
 
-      4. Reload the page when the reset button is clicked (hint: search window.location)
+      4. Reload the page when the reset button is clicked (hint: search window.location) (done)
 
       5. Add a countdown timer - when the time is up, end the quiz, display the score and highlight the correct answers
 *************************** */
@@ -87,15 +87,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (quizItem.a == i) {
           //change background color of li element here
-          //liElement.style.backgroundColor = "red";
+          liElement.style.backgroundColor = "red";
         }
 
         if (radioElement.checked == quizItem.a) {
           // code for task 1 goes here
+          //adds 1 to the score
           score += 1;
-          totalScore = document.getElementById("score");
+          totalScore = document.getElementById("#score");
           totalScore.innerHTML = `${score}`;
-          console.log(score);
         }
       }
     });
@@ -124,6 +124,19 @@ window.addEventListener('DOMContentLoaded', () => {
     display = document.querySelector('#time');
     startTimer(oneMinute, display);
   };
+
+  //Display correct answer in red when timer is over with score
+  
+  
+  
+
+  //Refresh page when reset button is clicked - testing why function is not working in JS script
+  /*function resetPage(){
+    window.location.reload();
+  };*/
+  
+
+
   // call the displayQuiz function
   displayQuiz();
   calculateScore()
